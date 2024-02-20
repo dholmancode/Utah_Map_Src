@@ -1,0 +1,246 @@
+.information-box {
+    background-color: white;  
+    max-width: 600px;
+    width: 60vw;
+    min-width: 400px;
+    height: 500px;
+    padding: 40px 0px 0px 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-color: linear-gradient(to bottom right, #ff4810c8, #ffe696);
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden;
+    opacity: 1; /* Start with opacity 0 */
+    transition: opacity 0.5s ease-in-out; /* Add a transition effect for opacity */
+}
+
+
+.information-box.selected {
+    opacity: 1;
+}
+
+/* Add a fade-in animation for the content */
+.information-box-content {
+    opacity: 0;
+    transform: translateX(1000px); /* Start with translateY(100px) */
+    transition: 1s ease-in-out; /* Add a transition for both opacity and transform */
+
+}
+
+.information-box.selected .information-box-content {
+
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.initial-message {
+    opacity: 0; /* Start with opacity 1 */
+    transition: opacity 0.5s ease-in-out; /* Add a transition effect for opacity */
+}
+
+.initial-message.visible {
+    opacity: 1; /* Hide the initial message when not visible */
+}
+
+.image-gallery img {
+    width: 100%;
+    height: 160px;
+    margin: 20px;
+    border-radius: 10px !important;
+}
+
+.image-gallery {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical overflow */
+    white-space: nowrap; /* Prevent images from wrapping to new lines */
+    display: flex;
+    height: 250px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-bottom: 100px;
+    flex-direction: row;
+    align-items: center;
+    background: linear-gradient(to bottom right, #4E4E4E, #FFE8D6);
+    animation: pulseAnimation 3s ease-in-out infinite alternate; /* Animation with a duration of 2 seconds, easing, and infinite loop */
+}
+
+
+
+.image-gallery img {
+    opacity: 0; /* Start with opacity 0 */
+    width: 100%;
+    height: 160px;
+    margin: 20px;
+    border-radius: 10px !important;
+    opacity: 0;
+    transition: 3.5s ease; /* Add a transition effect for opacity */
+}
+
+
+
+.image-gallery img.visible {
+    opacity: 1;
+    animation: fadeInAnimation 4s ease-in-out forwards;
+    animation-delay: 3s; /* Delay the animation for a staggered effect */
+}
+
+.box-title {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 500;
+    opacity: 0;
+    width: 500px;
+    animation: fadeInAnimation .5s  ease-in-out;
+    transform: translateX(500px);
+    transition: 1.5s ease-in-out;    
+    animation-delay: 0s; /* Delay the animation for a staggered effect */
+}
+
+.box-desc {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 300;
+    opacity: 0;
+    width: 500px;
+    animation: fadeInAnimation .5s  ease-in-out;
+    transform: translateX(500px);
+    transition: 1s ease;
+    max-width: 40vw;
+
+    transition: 1.5s ease-in-out;    
+    animation-delay: 1s; /* Delay the animation for a staggered effect */
+}
+
+/* Apply the typing animation to the title and description */
+.box-title.visible {
+    transform: translateX(-0px);
+    position: relative;
+    opacity: 1;
+    width: 500px;
+    animation: fadeInAnimation 1s  ease-in-out;
+}
+
+.box-desc.visible {
+    transform: translateX(-0px);
+    opacity: 1;
+    width: 500px;
+    max-width: 40vw;
+    transition: 1s ease;
+    animation: fadeInAnimation 3.5s  ease-in-out;
+}
+
+.box-activities {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 300;
+    opacity: 1;
+    width: 500px;
+    animation: fadeInAnimation .5s  ease-in-out;
+    transform: translateX(500px);
+    transition: 1.5s ease-in-out;    
+    animation-delay: 1s; /* Delay the animation for a staggered effect */
+}
+
+.box-activities.visible {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 500;
+    width: 500px;
+    transform: translateX(-0px);
+    opacity: 1;
+    animation: fadeInAnimation 3.5s  ease-in-out;
+}
+
+
+
+
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Accordion button style */
+.accordion-button {
+    padding: 10px 20px;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    background-color: #D55E00 !important;
+    color: #ffffff;
+    cursor: pointer;
+    width: fit-content;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 100px 100px 100px 100px;
+    text-align: left;
+    outline: none;
+    transition: .5s;
+    animation: pulseAnimation 3s ease-in-out infinite alternate; /* Animation with a duration of 2 seconds, easing, and infinite loop */
+    color: #ffffff;
+
+}
+
+/* Style when button is hovered over */
+.accordion-button:hover {
+    background-color: #83C5BE !important;
+    color: #000000;
+    background: linear-gradient(to top right, #00c19100, #6e6e6e00);
+
+}
+
+/* Style for the accordion content */
+.accordion-content {
+    padding: 0 18px;
+    width: 400px;
+    background: linear-gradient(to top right, #007c5db4, #FFFFFF);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1s ease;
+    margin: 10px 10px;
+    border-radius: 10px;
+    animation: pulseAnimation 3s ease-in-out infinite alternate; /* Animation with a duration of 2 seconds, easing, and infinite loop */
+    transition: max-height .5s ease;
+}
+
+/* Show the accordion content when open */
+.accordion-content.open {
+    max-height: 1000px;
+    height: fit-content;
+    border-radius: 10px;
+    width: 400px;
+    transition: max-height .5s ease;
+}
+
+.accordion-content ul {
+    display: flex;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 200;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style-type: disc;
+    padding:  8px 8px 16px 8px;
+}
+
+.accordion-content ul li {
+    padding: 2px 0;
+    line-height: 15px;
+}
+
+.accordion-content ul li:not(:last-child)::after {
+    content: " " "" " ";
+}

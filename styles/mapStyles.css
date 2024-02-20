@@ -1,0 +1,176 @@
+/* Styles for the map */
+body {
+  background: linear-gradient(to bottom left, #910d8c, #fad42e);
+  animation: pulseAnimation 2s ease-in-out infinite alternate; /* Animation with a duration of 2 seconds, easing, and infinite loop */
+  justify-content: center;
+
+}
+
+@keyframes pulseAnimation {
+  0% {
+    background-size: 110% 110%; /* Start size of the gradient */
+  }
+  100% {
+    background-size: 200% 200%; /* End size of the gradient */
+  }
+}
+
+header {
+  font-family: 'Varela Round', sans-serif; /* Apply 'Varela Round' font to header and footer */
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  margin: 50px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer h1 {
+  font-family: 'Varela Round', sans-serif; /* Apply 'Varela Round' font to header and footer */
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+footer a {
+  font-family: 'Varela Round', sans-serif; /* Apply 'Varela Round' font to header and footer */
+  text-align: center;
+  color: white;
+  margin: 10px;
+
+}
+
+footer img{
+  width: 100px;
+  margin-top: 20px;
+
+}
+
+/* Style for the park title */
+.park-title {
+  transition: .5s ease;
+  width: 100px;
+  white-space: wrap;
+  font-family: 'Varela Round', sans-serif; /* Apply 'Varela Round' font to header and footer */
+  font-size: 25px; /* Adjust font size as needed */
+  fill: rgb(255, 255, 255) !important; /* Text color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.park-title-background {
+  transition: .5s ease;
+  border-radius: 20px;
+  fill: rgba(0, 0, 0, 0);
+  visibility: hidden !important;
+
+}
+
+.park-icon:hover {
+  width: 70px;
+  transform: translateY(-30px) translateX(-20px); /* Animate the icon up to its original position */
+  z-index: 2; /* Ensure park icon appears above map */
+}
+.park-icon {
+  cursor: pointer;
+  width: 25px;
+  transform: translateY(-0px) translateX(0px); /* Animate the icon up to its original position */
+  transition: .3s ease-out; /* Add transition for width and transform properties */
+}
+
+.park-icon.selected {
+  width: 70px;
+  animation: pulse 3s ease infinite; /* Apply the pulsing animation */
+  z-index: 9999 !important; /* Ensure the selected park icon is on top */
+  transform: translateY(-0px) translateX(-0px); /* Animate the icon up to its original position */
+}
+
+@keyframes pulse {
+  0% {
+    width: 70px;
+    transform: translateY(-30px) translateX(-20px); /* Animate the icon up to its original position */
+
+  }
+  50% {
+    width:  75px;
+    transform: translateY(-30px) translateX(-20px); /* Animate the icon up to its original position */
+
+  }
+  100% {
+    width:  70px;
+    transform: translateY(-30px) translateX(-20px); /* Animate the icon up to its original position */
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+
+.map-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  border-radius: 20px;
+  border: 3px solid black !important;
+}
+
+.interactive-map {
+  /* Add your styles here */
+  background: linear-gradient(to bottom right, #FF5733, #FFEBA3);
+  border: 0px solid rgb(0, 0, 0);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  animation: pulseAnimation 2s ease-in-out infinite alternate; /* Animation with a duration of 2 seconds, easing, and infinite loop */
+  border: 20px solid black !important;
+}
+
+@media (max-width: 900px) {
+  .map-container {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .interactive-map {
+    order: 2; /* Move the map below the information box in the stacking order */
+  }
+
+  .information-box {
+    order: 1; /* Move the information box above the map in the stacking order */
+  }
+}
+
+.center-map-button-container button{
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+
+.center-map-button-container img{
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+
+  transition: .5s ease;
+}
+
+.center-map-button-container img:hover{
+  width: 110px;
+  height: 110px;
+  margin: 5px;
+
+}
